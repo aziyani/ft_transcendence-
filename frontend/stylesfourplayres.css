@@ -1,0 +1,123 @@
+/* General body styling */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('pingpong777.jpeg') no-repeat center center;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+  }
+  
+  /* Container for the tournament tree */
+  .tournament-tree-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensures pseudo-element stays inside the container */
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Pseudo-element for background image */
+  .tournament-tree-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('pingpong777.jpeg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.6; /* Adjust transparency */
+    z-index: 1; /* Behind the content */
+  }
+
+  .header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+  .username {
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+	z-index: 1;
+  }
+  /* Heading styling */
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700; /* Increased font weight for better emphasis */
+    color: #fff;
+    margin-bottom: 30px;
+    z-index: 2; /* Ensures heading is above the background */
+  }
+  
+  /* Bracket styling */
+  .bracket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Ensures bracket is above the background */
+  }
+  
+  /* Round styling */
+  .round {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Matchup styling */
+  .matchup {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600; /* Increased font weight */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow for depth */
+    z-index: 2; /* Ensures matchup is above the background */
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .tournament-tree-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    .matchup {
+      font-size: 1em;
+      padding: 15px;
+    }
+  }
+  

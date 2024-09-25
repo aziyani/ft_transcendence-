@@ -1,0 +1,182 @@
+/* General body styling */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('pingpong777.jpeg') no-repeat center center;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+  /* Container for the tournament tree */
+  .tournament-tree-container {
+    /* max-width: 600px; */
+    width: 70%;
+    height: 70%;
+    padding: 40px;
+    /* border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensures pseudo-element stays inside the container */
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Pseudo-element for background image */
+  .tournament-tree-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('pingpong777.jpeg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.6; /* Adjust transparency */
+    z-index: 1; /* Behind the content */
+  }
+
+/* Heading Styling */
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Bracket Layout */
+.bracket {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Round Layout */
+.round {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Left and Right Bracket Sections */
+.round.left,
+.round.right {
+  width: 20%;
+}
+
+/* Center Bracket Section (Semifinals and Final) */
+.round.center {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Matchup Styling */
+.matchup {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+/* Flags for Teams */
+.team-flag {
+  width: 20px;
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px;
+  vertical-align: middle; /* Align with text */
+}
+
+/* Line connectors */
+.line-connector,
+.semifinal-line {
+  width: 2px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+}
+
+/* Symmetry for Semifinals and Finals */
+.semifinal {
+  width: 80%;
+}
+
+.final {
+  width: 60%;
+  background-color: rgba(9, 9, 9, 0.7); /* Final match highlighted */
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInStaggered {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tournament-tree-container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  .matchup {
+      font-size: 1em;
+      padding: 10px;
+  }
+
+  .final {
+      font-size: 1.2em;
+      padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bracket {
+      flex-direction: column;
+  }
+
+  .round {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .round.center {
+      flex-direction: column;
+  }
+}
